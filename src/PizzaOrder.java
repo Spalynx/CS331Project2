@@ -12,7 +12,8 @@ public class PizzaOrder {
     //Constructors
     public PizzaOrder() {
         setNumPizzas(3);
-        num_pizzas = 3;  }
+        num_pizzas = 3;
+    }
     public PizzaOrder(int nP){
         setNumPizzas(nP);
     }
@@ -43,13 +44,30 @@ public class PizzaOrder {
 
     //Mutators for the pizzas in this class.
     public void setPizza1(Pizza pizza1){
-        if (num_pizzas >= 1) pizzas[0] = pizza1;
+        if (num_pizzas >= 1) {
+            pizzas[0] = pizza1;
+        }
+        if (num_pizzas < 1){
+            num_pizzas = 1;
+        }
     }
     public void setPizza2(Pizza pizza2){
-        if (num_pizzas >= 2) pizzas[1] = pizza2;
+        if (num_pizzas >= 2) {
+            pizzas[1] = pizza2;
+        }
+        if (num_pizzas < 2){
+            num_pizzas = 2;
+        }
+
     }
     public void setPizza3(Pizza pizza3){
-        if (num_pizzas >= 3) pizzas[2] = pizza3;
+        if (num_pizzas >= 3) {
+            pizzas[2] = pizza3;
+        }
+        if (num_pizzas < 3) {
+            num_pizzas =3;
+        }
+
     }
 
     //Calculates the total cost of these pizzas.
