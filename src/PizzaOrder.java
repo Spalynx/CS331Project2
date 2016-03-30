@@ -6,7 +6,7 @@
  */
 public class PizzaOrder {
     //The pizzas and number of pizzas.
-    private Pizza[] pizzas;
+    private Pizza[] pizzas = new Pizza[3];
     protected int num_pizzas;
 
     //Constructors
@@ -24,11 +24,9 @@ public class PizzaOrder {
 
     //Sets the amount of pizzas in the class.
     public void setNumPizzas(int numPizzas){
-        if(numPizzas > 3 && numPizzas < 1){
+        if(numPizzas > 3 || numPizzas < 1)
             System.out.println("Amt of pizzas not correct! Try again!");
-        }
         else {
-            pizzas      = new Pizza[numPizzas];
             num_pizzas  = numPizzas;
         }
     }
@@ -44,29 +42,23 @@ public class PizzaOrder {
 
     //Mutators for the pizzas in this class.
     public void setPizza1(Pizza pizza1){
-        if (num_pizzas >= 1) {
-            pizzas[0] = pizza1;
-        }
         if (num_pizzas < 1){
             num_pizzas = 1;
         }
+        pizzas[0] = pizza1;
     }
     public void setPizza2(Pizza pizza2){
-        if (num_pizzas >= 2) {
-            pizzas[1] = pizza2;
-        }
-        if (num_pizzas < 2){
+        if (num_pizzas == 1){
             num_pizzas = 2;
         }
+        pizzas[1] = pizza2;
 
     }
     public void setPizza3(Pizza pizza3){
-        if (num_pizzas >= 3) {
-            pizzas[2] = pizza3;
-        }
         if (num_pizzas < 3) {
             num_pizzas =3;
         }
+        pizzas[2] = pizza3;
 
     }
 

@@ -12,11 +12,11 @@ public class Main {
         //-------length is 1
         p.setPizza1(new Pizza(1,2,3,1));
         p.setPizza2(new Pizza(1,1,2,3));
-        System.out.println(p.num_pizzas);
 
         //-------length is 3
         C5Question8 c = new C5Question8(p);
-        System.out.println( c );
+        c.setPizza3(new Pizza(1,1,1,1));
+        System.out.println(c + "\n" + c.calcTotal());
 
         //TODO: implement the main method actions in C5Q8.
         //TODO: implement the main method actions in C5Q4.
