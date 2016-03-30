@@ -48,10 +48,9 @@ public class C5Question8 extends PizzaOrder{
 
     public String toString(){
         String description = "";
-        System.out.println(getPizzas().length);
 
-        for( Pizza p : getPizzas() ){
-            description += p.getDescription();
+        for(int i = 0; i < num_pizzas; i++){
+            description += getPizzas()[i].getDescription() + "\n";
         }
         return description;
     }
