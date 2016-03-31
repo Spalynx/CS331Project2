@@ -1,18 +1,30 @@
-
 /** This class emulates a simple pizza, that allows the user
  *  to input the amount of toppings, and the size of the pizza.
+ *
  *  @author Mark Eikel
+ *  @since 22 March 2016
  */
 class Pizza{
     private int size, numch, numpep, numham;
 
-    //Constructor to begin pizza emulation.
+    /** Initializes all of the private fields to
+     *  zero, effectively setting the cost to 0.
+     */
     Pizza(){
         size	= 0;
         numch	= 0;
         numpep	= 0;
         numham	= 0;
-    } //Allows the user to save a lot of time.
+    }
+
+    /** Saves a lot of time. Allows the user to
+     *  input all of the values of the pizza on creation.
+     *
+     * @param s     Int size of the pizza can't be bigger than 3.
+     * @param ch    Number of cheeses to add to pizza. 2$ a piece.
+     * @param pep   Number of pepperoni to add to pizza. 2$
+     * @param ham   Number of ham toppings to add to pizza. 2$
+     */
     Pizza(int s, int ch, int pep,int ham){
         size	= s;
         numch	= ch;
@@ -21,8 +33,11 @@ class Pizza{
     }
 
 
-    //Mutators for each value of the pizza.
-    //-------------------------------------
+    /** Sets the size of the pizza, 1-3 set it to
+     *  small,medium,large in order. Anything over
+     *  does not modify the size.
+     * @param s Size of the pizza (int)1-3.
+     */
     void setSize(int s){
         if (s >= 1 && s <= 3)
         {	size = s;	}
@@ -30,24 +45,46 @@ class Pizza{
             System.out.println
                     ("You entered an invalid pizza size!");	}
     }
+    /** Sets the number of cheeses, any integer allowed.
+     * @param ch number of cheeses to add.
+     */
     void setCheese(int ch){		numch = ch;	}
+    /** Sets the number of pepperoni.
+     * @param pep number of pepperonis on the pizza. Any int allowed.
+     */
     void setPepperoni(int pep){	numpep = pep;	}
+    /** Sets the number of ham toppings on the pizza.
+     * @param ham number of ham toppings on the pizza. Any int.
+     */
     void setHam(int ham){		numham = ham;	}
-    //-----------------------------------------------
 
-    //Accessors for each value of the pizza.
-    //--------------------------------------------------------
+
+    /** Returns the size of the pizza 1-3.
+      * @return Size of the pizza 1 < size < 3.
+     */
     int getSize(){		return size;	}
+    /** Returns the amount of cheeses on the pizza.
+     * @return number of cheeses on pizza.
+     */
     int getCheese(){	return numch;	}
+    /** Returns the number of pepperoni toppings on pizza.
+     * @return number of pepperoni toppings on pizza.
+     */
     int getPepperoni(){	return numpep;	}
+    /** Returns the number of ham toppings on the pizza.
+     * @return number of ham toppings on the pizza.
+     */
     int getHam(){		return numham;	}
-
-    //Gets the number of all toppings added together.
+    /** Returns the total number of toppings on the pizza.
+     * @return total toppings (ch + pep + ham).
+     */
     int getToppings(){	return numch + numpep + numham;	}
-    //-------------------------------------------------------
 
 
-    //Calculates the cost of the pizza, by checking the values.
+    /** Calculates the total cost of the pizza. Gathers the
+     *  total toppings, multiplies by 2x and adds the flat fee.
+     * @return total cost of the pizza.
+     */
     double calcCost(){
         double cost = 0;
         switch(getSize()){
@@ -67,7 +104,10 @@ class Pizza{
         return cost;
     }
 
-    //Returns a string that outputs all the contents of the pizza.
+    /** Returns a string that outputs all the contents of the pizza.
+     * @todo add a -v parameter, because this is just crazy.
+     * @return The total, verbose list of what makes up this pizz.
+     */
     String getDescription(){
         String desc = "You ordered a ";
         //Finding size of pizza.
