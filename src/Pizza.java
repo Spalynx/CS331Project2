@@ -1,10 +1,9 @@
 /** This class emulates a simple pizza, that allows the user
  *  to input the amount of toppings, and the size of the pizza.
- *
  *  @author Mark Eikel
  *  @since 22 March 2016
  */
-class Pizza{
+public class Pizza{
     private int size, numch, numpep, numham;
 
     /** Initializes all of the private fields to
@@ -60,7 +59,7 @@ class Pizza{
 
 
     /** Returns the size of the pizza 1-3.
-      * @return Size of the pizza 1 < size < 3.
+      * @return Size of the pizza, has to be 1-3.
      */
     int getSize(){		return size;	}
     /** Returns the amount of cheeses on the pizza.
@@ -105,11 +104,11 @@ class Pizza{
     }
 
     /** Returns a string that outputs all the contents of the pizza.
-     * @todo add a -v parameter, because this is just crazy.
      * @return The total, verbose list of what makes up this pizz.
      */
     String getDescription(){
         String desc = "You ordered a ";
+
         //Finding size of pizza.
         switch(getSize()){
             case 1:
