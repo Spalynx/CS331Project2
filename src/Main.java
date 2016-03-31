@@ -16,7 +16,7 @@ public class Main {
         //-------length is 3
         C5Question8 c = new C5Question8(p);
         c.setPizza3(new Pizza(1,1,1,1));
-        System.out.println(c + "\n" + c.calcTotal());
+        System.out.println(c + "\n" + c.getTotal());
 
         //TODO: implement the main method actions in C5Q8.
         //TODO: implement the main method actions in C5Q4.
