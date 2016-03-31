@@ -1,15 +1,9 @@
 /** CS331Project2
- * Created by Mark Eikel on 3/22/2016.
  * @author Mark Eikel
+ * @author Brandon Hathaway
  * @since 22 Mar. 2016
  */
 import java.util.Scanner;
-
-/** CS331Project2
- * Created by Mark Eikel on 3/22/2016.
- * @author Mark Eikel
- * @since 22 Mar. 2016
- */
 
 public class Main {
     public static void main(String [] args) {
