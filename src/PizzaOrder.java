@@ -1,4 +1,4 @@
-/** The PizzaOrder class is a wrapper for 1 <= x <= 3 pizzas
+/** The PizzaOrder class is a wrapper for 1-3 pizzas
  * allowing a person to emulate an order of pizza.
  *
  * @author Mark Eikel
@@ -12,7 +12,7 @@ public class PizzaOrder {
 
 
     /** Empty constructor, sets num of pizzas automatically
-     *  to 3, the max amt.
+     *  to 3, the max amount.
      */
     public PizzaOrder() {
         setNumPizzas(3);
@@ -61,7 +61,7 @@ public class PizzaOrder {
 
     /**Sets the amount of pizzas in the class by changing
      *  int num_pizzas to the desired.
-     * @param numPizzas
+     * @param numPizzas number of pizzas to have in the pizza order
      */
     public void setNumPizzas(int numPizzas){
         if(numPizzas > 3 || numPizzas < 1)
