@@ -1,26 +1,27 @@
 /** CS331Project2
+ *  Allows the user the option of which program segment
+ *  to run test solutions on.
  * @author Mark Eikel
  * @author Brandon Hathaway
  * @since 22 Mar. 2016
  */
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String [] args) {
-        System.out.println("Hello World!");
-        System.out.println("Does this work");
-
-        //System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0");
         Scanner input = new Scanner(System.in);
         int choice;
-        //input.nextInt();
+
         try{
             do{
-                    System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0\n");
+                System.out.println("Options:\n\t0. Quit\n\t1. Question 4\n\t2. Question 8");
+                System.out.print("Choose one: ");
                     choice = Integer.parseInt(input.next());
                     input.nextLine();
+                System.out.println();
 
-                if (choice == 4) {
+                if (choice == 1) {
                     /* Call Team and Competition class */
                     /* Assigns values to the Team class */
                     Competition myCompetition = new Competition();
@@ -60,30 +61,38 @@ public class Main {
                     System.out.println(myTeam2.printTeamsMembers(myTeam2));
                     System.out.println(myCompetition2.printCompetition());
 
-                } else if (choice == 8) {
-                    /* Call pizza class */
+                } else if (choice == 2) {
+                    //Inits a new pizza order with size of 1.
+                    PizzaOrder p = new PizzaOrder(1);
+                    Random ran = new Random();
+
+                    //Fills first pizza with a random pizza.
+                    p.setPizza1(new Pizza(ran.nextInt(2)+1,ran.nextInt(4),ran.nextInt(4),ran.nextInt(4)));
+
+                    //Fills the second one(auto expands to two pizzas.
+                    p.setPizza2(new Pizza(ran.nextInt(2)+1,ran.nextInt(4),ran.nextInt(4),ran.nextInt(4)));
+
+                    //Initializes a C5Q8 class with a pizza order.
+                    C5Question8 c = new C5Question8(p);
+
+                    //And it outputs the data.
+                    System.out.println( c );
+
+                    System.out.println("Total cost of pizzas: " + c.getCost());
+
+                //if you enter something wrong
                 } else if (choice != 0) {
                     System.out.print("This isn't a valid option enter a valid option next time.");
                 }
 
+                System.out.println("\n-----------------------------\n");
             } while( choice != 0 );
+
+            System.out.println("Exiting program...");
         } catch (NumberFormatException e){
             e.printStackTrace();
         }
-        System.out.println("Hello World!");
-        System.out.println("Does this work");
 
-        PizzaOrder p = new PizzaOrder(1);
-        //-------length is 1
-        p.setPizza1(new Pizza(1,2,3,1));
-        p.setPizza2(new Pizza(1,1,2,3));
-        System.out.println(p.num_pizzas);
-
-        //-------length is 3
-        C5Question8 c = new C5Question8(p);
-        System.out.println( c );
-
-        //TODO: implement the main method actions in C5Q8.
-        //TODO: implement the main method actions in C5Q4.
+        input.close();
     }
 }

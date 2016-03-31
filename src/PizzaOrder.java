@@ -38,10 +38,18 @@ public class PizzaOrder {
      *  the pizzas array.
      *  @return The total cost of pizzas
      */
-    public double getTotal(){
-        return pizzas[0].calcCost()
-                + pizzas[1].calcCost()
-                + pizzas[2].calcCost();
+    public double getCost(){
+        double total = 0;
+
+        //Adds based upon how many pizzas you have.
+        if(num_pizzas >= 1)
+            total += pizzas[0].calcCost();
+        if (num_pizzas >= 2)
+            total += pizzas[1].calcCost();
+        if (num_pizzas >= 3)
+            total += pizzas[2].calcCost();
+
+        return total;
     }
 
 

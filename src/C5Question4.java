@@ -1,14 +1,11 @@
 /**
- * Created by Brandon on 3/22/2016.
- * 0.0.1
- */
-
-/**
  * This class is called Competition which contains the information
  * of a specific competition held by something or some organization.
  * This class also contains the names of the winning team, and the
  * runner up. Finally this class also contains the year that the
  * competition was held.
+ * @since 22 March 2016
+ * @author Brandon Hathaway
  */
     class Competition{
     /**
@@ -158,6 +155,8 @@
  * Finally the class contains two object of the competition that
  * the Team will participate in and will show the results of that
  * competition.
+ * @since 22 March 2016
+ * @author Brandon Hathaway
  */
     class Team{
     /**
