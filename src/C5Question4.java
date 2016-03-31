@@ -2,9 +2,7 @@
  * Created by Brandon on 3/22/2016.
  * 0.0.1
  */
-
-public class C5Question4 {
-    private class Competition{
+    class Competition{
 
         Competition(){}
         /* Copy Constructor */
@@ -58,7 +56,7 @@ public class C5Question4 {
 
     }
 
-    private class Team{
+    class Team{
         private String team_name, name1, name2, name3, name4;
         Competition competition1, competition2;
 
@@ -142,4 +140,3 @@ public class C5Question4 {
             return all_team_members;
         }
     }
-}
