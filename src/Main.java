@@ -16,43 +16,66 @@ public class Main {
         System.out.println("Hello World!");
         System.out.println("Does this work");
 
-        System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0");
+        //System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0");
         Scanner input = new Scanner(System.in);
         int choice;
-        choice = input.nextInt();
+        //input.nextInt();
+        try{
+            do{
+                    System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0\n");
+                    choice = Integer.parseInt(input.next());
+                    input.nextLine();
 
-        do{
-            System.out.print("For Question 4 press: 4\nFor Question 8 press: 8\nTo quit the Application press: 0\n");
-            choice = input.nextInt();
-            if (choice == 4) {
-                /* Call Team and Competition class */
-                Competition myCompetition = new Competition();
-                Competition myCompetition2 = new Competition();
-                Team myTeam = new Team();
-                System.out.println("Enter in your team name:");
-                myTeam.setTeamName(input.nextLine());
-                System.out.println("Enter team members 1 name:");
-                myTeam.setName1(input.nextLine());
-                System.out.println("Enter team members 2 name:");
-                myTeam.setName2(input.nextLine());
-                System.out.println("Enter team members 3 name:");
-                myTeam.setName3(input.nextLine());
-                System.out.println("Enter team members 4 name:");
-                myTeam.setName4(input.nextLine());
+                if (choice == 4) {
+                    /* Call Team and Competition class */
+                    /* Assigns values to the Team class */
+                    Competition myCompetition = new Competition();
+                    Team myTeam = new Team();
 
+                    System.out.println("\nEnter in your team name:");
+                    myTeam.setTeamName(input.nextLine());
 
-                myTeam.setCompetition1(myCompetition);
-                myTeam.setCompetition2(myCompetition);
+                    System.out.println("\nEnter team members 1 name:");
+                    myTeam.setName1(input.nextLine());
+                    System.out.println("\nEnter team members 2 name:");
+                    myTeam.setName2(input.nextLine());
+                    System.out.println("\nEnter team members 3 name:");
+                    myTeam.setName3(input.nextLine());
+                    System.out.println("\nEnter team members 4 name:");
+                    myTeam.setName4(input.nextLine());
 
-            } else if (choice == 8) {
-                /* Call pizza class */
-            } else if (choice == 0) {
-                choice = 0;
-            } else {
-                System.out.print("This isn't a valid option enter a valid option next time.");
-            }
-        } while( choice != 0 );
+                    /* Assigns values to all of the Competitions */
+                    System.out.println("\nEnter the competition name:");
+                    myCompetition.setCompetition_name(input.nextLine());
+                    System.out.println("\nEnter the competition's winning team:");
+                    myCompetition.setWinning_team(input.nextLine());
+                    System.out.println("\nEnter the competition's runner up:");
+                    myCompetition.setRunner_up(input.nextLine());
+                    System.out.println("\nEnter the year of the competition:");
+                    myCompetition.setCompetition_year(input.nextInt());
 
+                    /* implements copy constructor */
+                    Competition myCompetition2 = new Competition(myCompetition);
+
+                    myTeam.setCompetition1(myCompetition);
+                    myTeam.setCompetition2(myCompetition2);
+
+                    /* implements deep copy constructor */
+                    Team myTeam2 = new Team(myTeam,true);
+
+                    System.out.println(myTeam2.printTeamsMembers(myTeam2));
+                    System.out.println(myCompetition2.printCompetition());
+
+                } else if (choice == 8) {
+                    /* Call pizza class */
+                } else if (choice != 0) {
+                    System.out.print("This isn't a valid option enter a valid option next time.");
+                }
+
+            } while( choice != 0 );
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+        }
         System.out.println("Hello World!");
         System.out.println("Does this work");
 

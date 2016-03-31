@@ -5,8 +5,9 @@
     class Competition{
 
         Competition(){}
-        /* Copy Constructor */
+
         Competition(Competition other_competition){
+            /* Copy Constructor */
             this.competition_year = other_competition.competition_year;
             this.competition_name = other_competition.competition_name;
             this.runner_up = other_competition.runner_up;
@@ -15,8 +16,10 @@
 
         Competition(Competition other_competition, Boolean flag){
             /* Deep copy Constructor */
-            Competition myCompetition = new Competition(other_competition);
-            myCompetition = this;
+            competition_year = other_competition.competition_year;
+            competition_name = other_competition.competition_name;
+            runner_up = other_competition.runner_up;
+            winning_team = other_competition.winning_team;
         }
 
         String competition_name, winning_team, runner_up;
@@ -54,6 +57,11 @@
             return competition_year;
         }
 
+        String printCompetition(){
+            String temp = ("Competition Name: " + competition_name + "\nWinner: " + winning_team + "\nRunner Up: " + runner_up + "\nCompetition Year: " + competition_year);
+            return temp;
+        }
+
     }
 
     class Team{
@@ -74,8 +82,14 @@
 
         Team(Team other_team, Boolean flag){
             /* Deep copy Constructor */
-            Team myteam = new Team(other_team);
-            myteam = this;
+            team_name = other_team.team_name;
+            name1 = other_team.name1;
+            name2 = other_team.name2;
+            name3 = other_team.name3;
+            name4 = other_team.name4;
+            competition1 = other_team.competition1;
+            competition2 = other_team.competition2;
+
         }
 
         void setName1(String entered){
@@ -134,9 +148,11 @@
             return competition2;
         }
 
-        String printTeamsMembers(){
+        String printTeamsMembers(Team a){
             String all_team_members;
-            all_team_members = (team_name +": " + name1 + name2 + name3 + name4);
+            System.out.println("Team Name: " + a.getTeamName() +"\nTeam Members: " + a.getName1() + ", " + a.getName2() + ", " + a.getName3() + ", " + a.getName4());
+
+            all_team_members = ("Team Name: " + a.getTeamName() +"\nTeam Members: " + a.getName1() + ", " + a.getName2() + ", " + a.getName3() + ", " + a.getName4());
             return all_team_members;
         }
     }
